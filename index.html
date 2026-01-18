@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <h1>Weather Dashboard</h1>
+    <p class="subtitle">Real-time weather information</p>
+
+    <div class="search-container">
+        <input type="text" id="cityInput" placeholder="Search city..." autocomplete="off">
+        <div id="suggestions" class="suggestions"></div>
+
+        <button onclick="getWeather()">Search</button>
+        <button class="location-btn" onclick="getCurrentLocation()">Use Current Location</button>
+    </div>
+
+    <div id="weatherResult" class="weather-card"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

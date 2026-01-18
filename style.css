@@ -1,0 +1,211 @@
+/* ===============================
+   GLOBAL RESET & BASE STYLES
+   =============================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.6s ease;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ===============================
+   WEATHER THEMES (GRADIENTS)
+   =============================== */
+body.clear {
+    background: linear-gradient(135deg, #fbc531, #f5a623);
+}
+
+body.clouds {
+    background: linear-gradient(135deg, #8e9eab, #eef2f3);
+}
+
+body.rain {
+    background: linear-gradient(135deg, #4b79a1, #283e51);
+}
+
+body.snow {
+    background: linear-gradient(135deg, #e6dada, #274046);
+}
+
+/* ===============================
+   MAIN APP CONTAINER
+   =============================== */
+.app {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+h1 {
+    font-size: 26px;
+    color: #2f3640;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #636e72;
+    margin-bottom: 20px;
+}
+
+/* ===============================
+   SEARCH AREA
+   =============================== */
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #dcdde1;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.search-container input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.15);
+}
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.search-container button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 11px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(135deg, #6c5ce7, #4834d4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-container button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(108, 92, 231, 0.4);
+}
+
+.location-btn {
+    background: linear-gradient(135deg, #00b894, #019875);
+}
+
+.location-btn:hover {
+    box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+}
+
+/* ===============================
+   CITY SUGGESTIONS
+   =============================== */
+.suggestions {
+    position: absolute;
+    top: 46px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.suggestions div {
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.suggestions div:hover {
+    background: #f1f2f6;
+}
+
+/* ===============================
+   WEATHER CARD
+   =============================== */
+.weather-card {
+    margin-top: 22px;
+    padding: 18px;
+    background: #f9fafc;
+    border-radius: 14px;
+    animation: slideUp 0.6s ease;
+}
+
+.weather-card h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #2d3436;
+}
+
+.weather-card p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #555;
+}
+
+.weather-card img {
+    width: 90px;
+    margin: 6px 0;
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .app {
+        width: 90%;
+    }
+}
+
+   .day-icon,
+   .night-icon {
+       font-size: 22px;
+       margin-left: 6px;
+   }
+   
+   body.night {
+       background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+   }
+   
